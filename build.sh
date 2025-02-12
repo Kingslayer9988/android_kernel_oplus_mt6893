@@ -2,14 +2,14 @@
 clear
 function compile() 
 {
-echo ORIGIN KERNEL FOR REALME X7 MAX 5G, CODENAMED - CUPIDA
+echo Kingslayer KERNEL FOR OnePlus Nord 2 5G, CODENAMED - DENNIZ
 echo
 source ~/.bashrc && source ~/.profile
 export LC_ALL=C && export USE_CCACHE=1
 ccache -M 100G >/dev/null
 export ARCH=arm64
 export KBUILD_BUILD_HOST=origin
-export KBUILD_BUILD_USER="nishant6342"
+export KBUILD_BUILD_USER="Kingslayer9988"
 clangbin=clang/bin/clang
 if ! [ -a $clangbin ]; then git clone --depth=1 https://gitlab.com/projectelixiros/android_prebuilts_clang_host_linux-x86_clang-r468909b clang
 fi
@@ -35,7 +35,7 @@ echo Trying to restart script
 fi
 fi
 
-make O=out ARCH=arm64 cupida_defconfig
+make O=out ARCH=arm64 denniz_defconfig
 
 PATH="${PWD}/clang/bin:${PATH}:${PWD}/los-4.9-32/bin:${PATH}:${PWD}/los-4.9-64/bin:${PATH}" \
 make -j$(nproc --all)   O=out \
@@ -66,10 +66,10 @@ if ! [ -a $anykernelbin ]; then git clone --depth=1 https://github.com/nishant63
 fi
 cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 cd AnyKernel
-zip -r9 ORIGIN-OSS-KERNEL-RMX3031.zip *
+zip -r9 Kingslayer-OSS-KERNEL-Denniz-KSU-Next-SUSFS_155_02122025.zip *
 #curl --upload-file ORIGIN-OSS-KERNEL-RMX3031.zip https://transfer.sh/
-curl -sL https://git.io/file-transfer | sh
-./transfer anon ORIGIN-OSS-KERNEL-RMX3031.zip
+#curl -sL https://git.io/file-transfer | sh
+#./transfer anon ORIGIN-OSS-KERNEL-RMX3031.zip
 cd ../
 fi
 }
